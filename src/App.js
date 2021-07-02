@@ -11,8 +11,8 @@ class App extends Component {
       <BrowserRouter basename={process.env.REACT_APP_ROUTER_BASE || ''}>
           <Switch>
           <Route  exact={true}  path='/clients' component={ListClient}/>
-          <Route path='/clients/:id' component={ClientEdit}/>
-           <Route path='/projet/clients/:id' component={ClientEdit}/>
+          <Route path='/projet/clients/:id' component={ClientEdit}/>
+           <Route path='/projet/projet/clients/:id' component={ClientEdit}/>
             <Route path='/' component={Home}/>
            
        
