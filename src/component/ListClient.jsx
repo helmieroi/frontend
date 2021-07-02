@@ -2,13 +2,13 @@ import React from "react";
 import { Button, Container, Table  } from 'reactstrap';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
-import { Link } from 'react-router-dom';
+import { Link,withRouter  } from 'react-router-dom';
 import "./ListClient.css";
 import Navbar from './navBar/Navbar';
 
 class ListClient extends React.Component {
 
-
+    
   
   state = {
         filter: "",
@@ -23,7 +23,8 @@ class ListClient extends React.Component {
 
 
     async componentDidMount() {
-        const response = await fetch('/projet/clients');
+   
+        const response = await fetch('/clients');
         const body = await response.json();
         this.setState({ clients: body });
     }
@@ -36,7 +37,7 @@ class ListClient extends React.Component {
 
  
     render() {
-   
+  
         let { filter, clients } = this.state;
         let Datasearch = clients.filter(item => {
             return Object.keys(item).some(key =>
@@ -116,4 +117,4 @@ class ListClient extends React.Component {
         );
     }
 }
-export default ListClient;
+export default withRouter(ListClient);
