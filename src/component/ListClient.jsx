@@ -23,7 +23,7 @@ class ListClient extends React.Component {
 
 
     async componentDidMount() {
-        const response = await fetch('/projet/clients');
+        const response = await fetch('/clients');
         const body = await response.json();
         this.setState({ clients: body });
     }
