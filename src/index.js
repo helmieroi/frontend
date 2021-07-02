@@ -5,8 +5,10 @@ import App from './App';
 import * as ServiceWorker from './serviceWorker.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
+ <React.StrictMode>
+    <HashRouter>
+      <App />
+    </HashRouter>
   </React.StrictMode>,
   
   document.getElementById('root')
